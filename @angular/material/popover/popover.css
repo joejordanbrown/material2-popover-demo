@@ -1,0 +1,103 @@
+/** The mixins below are shared between md-menu and md-select */
+/**
+ * This mixin adds the correct panel transform styles based
+ * on the direction that the menu panel opens.
+ */
+/**
+ * Applies styles for users in high contrast mode. Note that this only applies
+ * to Microsoft browsers. Chrome can be included by checking for the `html[hc]`
+ * attribute, however Chrome handles high contrast differently.
+ */
+.md-popover-panel {
+  max-height: calc(100vh + 48px); }
+  .md-popover-panel.md-menu-after.md-menu-below {
+    transform-origin: left top; }
+  .md-popover-panel.md-menu-after.md-menu-above {
+    transform-origin: left bottom; }
+  .md-popover-panel.md-menu-before.md-menu-below {
+    transform-origin: right top; }
+  .md-popover-panel.md-menu-before.md-menu-above {
+    transform-origin: right bottom; }
+  [dir='rtl'] .md-popover-panel.md-menu-after.md-menu-below {
+    transform-origin: right top; }
+  [dir='rtl'] .md-popover-panel.md-menu-after.md-menu-above {
+    transform-origin: right bottom; }
+  [dir='rtl'] .md-popover-panel.md-menu-before.md-menu-below {
+    transform-origin: left top; }
+  [dir='rtl'] .md-popover-panel.md-menu-before.md-menu-above {
+    transform-origin: left bottom; }
+  @media screen and (-ms-high-contrast: active) {
+    .md-popover-panel {
+      outline: solid 1px; } }
+
+.md-popover-content {
+  padding: 15px 0; }
+
+[md-popover-item] {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  line-height: 48px;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 16px;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  text-align: start;
+  text-decoration: none;
+  position: relative; }
+  [md-popover-item][disabled] {
+    cursor: default; }
+  [md-popover-item] md-icon {
+    margin-right: 16px; }
+    [dir='rtl'] [md-popover-item] md-icon {
+      margin-left: 16px; }
+
+button[md-popover-item] {
+  width: 100%; }
+
+.md-popover-ripple {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+.md-popover-below .direction-arrow {
+  position: absolute;
+  top: 0px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid rgba(0, 0, 0, 0.12); }
+
+.md-popover-above .direction-arrow {
+  position: absolute;
+  bottom: -1px;
+  width: 0;
+  height: 0;
+  border-top: 15px solid rgba(0, 0, 0, 0.12);
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent; }
+
+.md-popover-after .direction-arrow {
+  left: 20px; }
+
+.md-popover-before .direction-arrow {
+  right: 20px; }
+
+.md-popover-above.md-popover-overlap .md-popover-content {
+  padding: 30px 0 0 0; }
+
+.md-popover-below.md-popover-overlap .md-popover-content {
+  padding: 0; }
+
+/*# sourceMappingURL=popover.css.map */
